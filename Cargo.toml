@@ -1,0 +1,29 @@
+[package]
+name = "sled-pyo3-example"
+version = "0.1.0"
+authors = ["William Ballenthin <william.ballenthin@fireeye.com>"]
+edition = "2018"
+
+
+[lib]
+name = "sp3e"
+crate-type = ["cdylib"]
+
+[dependencies]
+log = "0.4"
+pyo3 = { version = "0.12"}
+pyo3-log = "0.2"
+sled = "0.34.4"
+
+[features]
+extension-module = ["pyo3/extension-module"]
+default = ["extension-module"]
+
+[package.metadata.maturin]
+classifier = [
+  "Programming Language :: Rust",
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: Apache Software License",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+]
